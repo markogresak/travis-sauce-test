@@ -2,6 +2,19 @@
 # Generated on Sat Feb 28 2015 23:58:39 GMT+0100 (CET)
 
 module.exports = (config) ->
+
+  if not process.env.SAUCE_USERNAME or not process.env.SAUCE_ACCESS_KEY
+    console.error 'Make sure the SAUCE_USERNAME and SAUCE_ACCESS_KEY environment variables are set.'
+    process.exit 1
+
+  customLaunchers =
+    'SL_Chrome':
+      base: 'SauceLabs'
+      browserName: 'chrome'
+    'SL_Firefox':
+      base: 'SauceLabs'
+      browserName: 'firefox'
+
   config.set
 
     # base path that will be used to resolve all patterns (eg. files, exclude)
@@ -47,7 +60,7 @@ module.exports = (config) ->
     # test results reporter to use
     # possible values: 'dots', 'progress'
     # available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress', 'mocha']
+    reporters: ['progress', 'mocha', 'saucelabs']
 
 
     # web server port
@@ -74,9 +87,17 @@ module.exports = (config) ->
 
     # start these browsers
     # available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS']
+    # browsers: ['PhantomJS']
 
 
     # Continuous Integration mode
     # if true, Karma captures browsers, runs the tests and exits
     singleRun: true
+
+    # sauce labs config
+    sauceLabs:
+      testName: 'Karma and Sauce Labs demo'
+
+    customLaunchers: customLaunchers
+
+    browsers: Object.keys(customLaunchers)

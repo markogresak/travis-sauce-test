@@ -29,7 +29,7 @@ module.exports = (config) ->
       'karma-mocha'
       'karma-chai'
       'karma-coffee-preprocessor'
-      'karma-phantomjs-launcher'
+      'karma-sauce-launcher'
       'karma-mocha-reporter'
     ]
 

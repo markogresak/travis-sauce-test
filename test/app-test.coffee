@@ -1,4 +1,4 @@
-describe "karma sample", ->
-
-  it "should fail", ->
-    test().should.equal false
+describe "You", ->
+  describe "shall", ->
+    it "pass", ->
+      test().should.be.ok

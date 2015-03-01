@@ -1,3 +1,11 @@
+#!/bin/bash
+
+# Setup and start Sauce Connect for your TravisCI build
+# This script requires your .travis.yml to include the following two private env variables:
+# SAUCE_USERNAME
+# SAUCE_ACCESS_KEY
+# Follow the steps at https://saucelabs.com/opensource/travis to set that up.
+
 CONNECT_URL="https://saucelabs.com/downloads/sc-4.3.6-linux.tar.gz"
 CONNECT_DIR="/tmp/sauce-connect-$RANDOM"
 CONNECT_DOWNLOAD="sc-4.3.6-linux.tar.gz"
@@ -33,8 +41,3 @@ echo "  $CONNECT_STDOUT"
 echo "  $CONNECT_STDERR"
 sauce-connect/bin/sc -u $SAUCE_USERNAME -k $SAUCE_ACCESS_KEY $ARGS -v \
   --logfile $CONNECT_LOG 2> $CONNECT_STDERR 1> $CONNECT_STDOUT &
-
-# wait for browser provider
-while [ ! -f $BROWSER_PROVIDER_READY_FILE ]; do
-  sleep .5
-done

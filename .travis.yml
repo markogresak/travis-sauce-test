@@ -4,6 +4,8 @@ node_js:
 cache:
   directories:
     - node_modules
+before_script:
+  - ./scripts/start_browser_provider.sh
 env:
   global:
     - secure: KZqt1P6yx7Cv8O/koBaITW/aAgg9iVgQA/97eR6MlsIN06nMjFpr5CUi8a2htdcEmQgU1RGsT9pobfJGQT7kQhmSCfGF0VuWrx17AVyVjzdW9UG0SkeFyImNCY+dIbeuDpDwjCaKWHzCYTQmuz57rZUGlpNi3vw70GXXibiSHvQ=

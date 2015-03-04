@@ -94,6 +94,8 @@ module.exports = (config) ->
     # sauce labs config
     sauceLabs:
       testName: 'Karma and Sauce Labs demo'
+      connectOptions:
+        tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER
 
     customLaunchers: customLaunchers
 

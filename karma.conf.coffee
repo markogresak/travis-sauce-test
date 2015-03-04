@@ -88,6 +88,9 @@ module.exports = (config) ->
     # if true, Karma captures browsers, runs the tests and exits
     singleRun: true
 
+    # Add more time if on CI.
+    captureTimeout: 60000 * (if process.env.TRAVIS then 2 else 1)
+
     # sauce labs config
     sauceLabs:
       testName: 'Karma and Sauce Labs demo'

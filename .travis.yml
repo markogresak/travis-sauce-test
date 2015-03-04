@@ -8,5 +8,3 @@ env:
   global:
   - secure: XXpmeQNnRtpt9PPHn77pYreO3CY6BgjrdJuB5ZV7kDr8I4Cg3bQ2jxotUXiN7m9ahQEOhtx2owXsRg8YH+QE3fr76ou9vAjiDX7WQxa6JFczaBYK3GXSQ+DNceU+m9L0s2DPZkQ8zZ5pSw2n/trs45SJGAS3LOo3rTz4ib+Akis=
   - secure: r+ML4dVRWhaqf4SzDzBoy1eKHBpUfBHbjJ5V7+3zx/A7U+QTAi+PaMiabP14TfkY039Oy+JjLzJ1loAh823Pq1vGsUDplD3AWeM18UWwMrb5WKmVY8ishMznqen3oPMdRsh1wo7iVfVh9ZGCnLNF+2slAngpw3AWB5W0GbmvQN8=
-# addons:
-#   sauce_connect: true
